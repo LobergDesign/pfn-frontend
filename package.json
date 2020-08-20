@@ -1,6 +1,7 @@
 {
   "name": "pfn",
   "version": "1.0.0",
+  "author": "LobergDesign",
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
