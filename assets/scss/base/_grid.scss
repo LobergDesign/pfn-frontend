@@ -1,0 +1,19 @@
+﻿.container-fluid {
+  padding: 0;
+  overflow: hidden;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80wv;
+  }
+}
+@media (min-width: 1950px) {
+  .container {
+    max-width: 60vw;
+  }
+}

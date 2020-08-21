@@ -1,0 +1,100 @@
+﻿@import "~assets/scss/tools/media-queries";
+.flex {
+  display: flex;
+}
+
+[class*="flex-"] {
+  display: flex;
+}
+
+.flex-start {
+  justify-content: start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-space-around {
+  justify-content: space-around;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.flex-center-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-vertical-stretch {
+  align-items: stretch;
+}
+
+.flex-vertical-direction {
+  flex-direction: column;
+}
+
+.flex-bottom {
+  align-items: flex-end;
+}
+
+.flex-vertical-center {
+  align-items: center;
+}
+
+.reset-ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.row-ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.align-items-center {
+  text-align: center;
+}
+.align-items-right {
+  text-align: right;
+}
+// align icons in bottom
+.align-bottom {
+  display: flex;
+  flex-direction: column;
+  align-content: Space-between;
+  position: static;
+
+  &__flex-grow {
+    flex-grow: 1;
+  }
+}
+
+.full-height {
+  height: 100%;
+}
+.full-width {
+  width: 100%;
+}
+.pos-relative {
+  position: relative;
+}
+
+@include viewport-small {
+  .hide-mobil {
+    display: none;
+  }
+}

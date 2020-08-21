@@ -1,0 +1,63 @@
+@import "~assets/scss/settings/_viewport.scss";
+//-------- Media queries -------//
+// estra small phones
+@mixin viewport-extra-small {
+  // max-width: 350px
+  @media only screen and (max-width: $viewport-extra-small) {
+    @content;
+  }
+}
+
+// phones
+@mixin viewport-small {
+  // max-width: 576
+  @media only screen and (max-width: $viewport-small) {
+    @content;
+  }
+}
+
+//bootstraps breaking point for tablet
+@mixin viewport-tablet {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// tablet vertical down to phone
+@mixin viewport-medium {
+  // max-width: 992
+  @media only screen and (max-width: $viewport-medium) {
+    @content;
+  }
+}
+
+// tablet horizontal and down to phone
+@mixin viewport-large {
+  // max-width: 1025
+  @media only screen and (max-width: $viewport-large) {
+    @content;
+  }
+}
+
+// desktop
+@mixin viewport-extra-large {
+  // max-width: 1200
+  @media only screen and (max-width: $viewport-extra-large) {
+    @content;
+  }
+}
+
+// xl screens
+@mixin viewport-max {
+  // min-width: 1920px
+  @media only screen and (min-width: $viewport-max) {
+    @content;
+  }
+}
+
+// only mouse interactions
+@mixin viewport-mouse {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}

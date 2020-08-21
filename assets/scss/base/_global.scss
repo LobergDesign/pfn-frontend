@@ -1,0 +1,49 @@
+﻿@import "~assets/scss/settings/_colors.scss";
+@import "~assets/scss/settings/_transitions.scss";
+@import "~assets/scss/tools/_positioning.scss";
+@import "~assets/scss/settings/_fonts.scss";
+@import "~assets/scss/tools/_media-queries.scss";
+@import "~assets/scss/settings/_layout.scss";
+
+html {
+  font-size: 62.5%;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (inverted-colors) {
+  img,
+  video,
+  picture {
+    filter: invert(100);
+  }
+}
+
+@include viewport-large {
+  html {
+    font-size: 56%;
+  }
+}
+
+@include viewport-medium {
+  html {
+    font-size: 58%;
+  }
+}
+
+@include viewport-small {
+  html {
+    font-size: 52%;
+  }
+}

@@ -1,0 +1,51 @@
+﻿@mixin default-text-style {
+
+  font-size: 1.6rem;
+
+}
+h1,
+h2,
+.headline-2,
+h3,
+.headline-3,
+h4 {
+
+  font-weight: normal;
+}
+h1 {
+  font-size: clamp(5rem, 10vw, 20rem);
+
+}
+h2,
+.headline-2 {
+  font-size: clamp(4rem, 7vw, 12rem);
+
+}
+h3, .headline-3 {
+  font-size: 3rem;
+
+}
+h4 {
+  font-size: 2.4rem;
+
+}
+
+b,
+strong {
+
+}
+p {
+  @include default-text-style;
+
+}
+p a {
+  @include default-text-style;
+}
+ul li,
+ol li {
+  @include default-text-style;
+}
+blockquote {
+}
+a {
+}
