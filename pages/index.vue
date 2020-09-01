@@ -17,6 +17,21 @@
               Tlf: {{pageData.phonenumber}}
             </a>
           </li>
+          <li>
+            <a :href="'tel:' + pageData.phonenumber">
+              Tlf: {{pageData.phonenumber}}
+            </a>
+          </li>
+          <li>
+            <a :href="'tel:' + pageData.phonenumber">
+              Tlf: {{pageData.phonenumber}}
+            </a>
+          </li>
+          <li>
+            <a :href="'tel:' + pageData.phonenumber">
+              Tlf: {{pageData.phonenumber}}
+            </a>
+          </li>
         </ul>
       </div>
     </div>
