@@ -1,7 +1,7 @@
 import { Vue, Component } from "nuxt-property-decorator";
 import { currentPageData } from "~/resources/cms";
 @Component({
-  name: "Frontpage"
+  name: "Frontpage",
 })
 export default class Frontpage extends Vue {
   private metaTitle: string = "";
@@ -11,16 +11,16 @@ export default class Frontpage extends Vue {
     return {
       title: this.metaTitle,
       meta: [
-        { hid: "description", name: "description", content: this.metaDesc }
-      ]
+        { hid: "description", name: "description", content: this.metaDesc },
+      ],
     };
   }
 
   async asyncData() {
     // get all frontpage data
-    const pageData: any = await currentPageData("frontpage");
-console.log("frontskndg", pageData);
+    const pageData: any = await currentPageData("landingpage");
+    console.log("frontlskndg", pageData);
+    return {pageData};
     
-
   }
 }
