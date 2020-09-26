@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^1.0.0",
+    "@nuxtjs/apollo": "^4.0.1-rc.3",
     "contentful": "^7.14.6",
     "nuxt": "^2.14.0",
     "nuxt-property-decorator": "^2.7.2"
@@ -18,10 +19,9 @@
   "devDependencies": {
     "@nuxt/types": "^2.14.0",
     "@nuxt/typescript-build": "^2.0.2",
-    "@nuxtjs/tailwindcss": "^2.1.0",
+    "@nuxtjs/dotenv": "^1.4.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "@nuxtjs/dotenv": "^1.4.1",
     "node-sass": "^4.14.1",
     "nuxt-webfontloader": "^1.1.0",
     "prettier": "^2.0.5",

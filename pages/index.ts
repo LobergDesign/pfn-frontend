@@ -21,6 +21,20 @@ export default class Frontpage extends Vue {
     const pageData: any = await currentPageData("landingpage");
     console.log("frontlskndg", pageData);
     return {pageData};
+   
+    // - https://stackoverflow.com/questions/45165211/how-to-use-graphql-in-nuxtjs
+    // - https://hasura.io/blog/create-nuxt-js-universal-apps-using-graphql-on-postgres/
+
+    // apollo:{
+    //   frontpage(id: "6jGasc0cNzWnSTwiMDzwsW") {
+    //     title
+    //     heroSection {
+    //       title
+    //       subtitle
+    //       bodytext{json}
+    //     }
+    //   }
+    // }
     
   }
 }

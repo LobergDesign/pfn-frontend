@@ -1,8 +1,7 @@
 require("dotenv").config();
 const config = require("./.contentful.json");
-
+// graph playground - https://graphql.contentful.com/content/v1/spaces/nriyvl1sdzam/explore?access_token=8Xswc4xPm5COXCCYlwplgx0AruGKaJGYr-u1LSwsJVY
 export default {
-  mode: "universal",
   target: "static",
   loading: false,
   head: {
@@ -24,12 +23,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    "@nuxt/typescript-build",
-    "@nuxtjs/dotenv",
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    "@nuxtjs/tailwindcss",
-  ],
+  buildModules: ["@nuxt/typescript-build", "@nuxtjs/dotenv"],
   webfontloader: {
     google: {
       families: ["Open Sans:n3,n4", "Roboto:n3,n7"],
@@ -53,7 +47,15 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["nuxt-webfontloader"],
+  modules: ["nuxt-webfontloader", "@nuxtjs/apollo"],
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: "https://graphql.contentful.com",
+        getAuth: () => "8Xswc4xPm5COXCCYlwplgx0AruGKaJGYr-u1LSwsJVY",
+      },
+    },
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
