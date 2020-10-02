@@ -1,0 +1,9 @@
+{
+  frontpage {
+    title
+    heroSection {
+      title
+      subtitle
+    }
+  }
+}

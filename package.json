@@ -13,8 +13,13 @@
     "@nuxt/typescript-runtime": "^1.0.0",
     "@nuxtjs/apollo": "^4.0.1-rc.3",
     "contentful": "^7.14.6",
+    "core-js": "^2.6.11",
+    "graphql-tag": "^2.11.0",
     "nuxt": "^2.14.0",
-    "nuxt-property-decorator": "^2.7.2"
+    "nuxt-property-decorator": "^2.7.2",
+    "vue": "^2.6.6",
+    "vue-server-renderer": "^2.6.6",
+    "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.0",

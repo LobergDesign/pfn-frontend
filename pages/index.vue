@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <h3>{{ pageData.title }}</h3>
+    <!-- <h3>{{ pageData.title }}</h3> -->
 
     <div>
       <h1>Some title</h1>
@@ -12,7 +12,7 @@
       </p>
     </div>
 
-    <ul>
+    <!-- <ul>protractor
       <li>
         <a :href="'tel:' + pageData.phonenumber">
           Tlf: {{ pageData.phonenumber }}
@@ -33,7 +33,7 @@
           Tlf: {{ pageData.phonenumber }}
         </a>
       </li>
-    </ul>
+    </ul> -->
   </section>
 </template>
 <script src="./index.ts"></script>
