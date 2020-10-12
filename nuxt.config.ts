@@ -50,11 +50,7 @@ export default {
   modules: ["nuxt-webfontloader", "@nuxtjs/apollo"],
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: "https://graphql.contentful.com/content/v1/spaces/nriyvl1sdzam/environments/master",
-        ContentType: "application/json",
-        Authorization: "Bearer 8Xswc4xPm5COXCCYlwplgx0AruGKaJGYr-u1LSwsJVY"
-      },
+      default: "~/plugins/apollo-client-config.js"
     },
   },
   /*
