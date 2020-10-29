@@ -1,5 +1,3 @@
-require("dotenv").config();
-const config = require("./.contentful.json");
 // graph playground - https://graphql.contentful.com/content/v1/spaces/nriyvl1sdzam/explore?access_token=8Xswc4xPm5COXCCYlwplgx0AruGKaJGYr-u1LSwsJVY
 export default {
   target: "static",
@@ -18,12 +16,11 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
   css: ["@/assets/scss/site.scss"],
-  plugins: ["~/plugins/contentful"],
   components: true,
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxt/typescript-build", "@nuxtjs/dotenv"],
+  buildModules: ["@nuxt/typescript-build"],
   webfontloader: {
     google: {
       families: ["Open Sans:n3,n4", "Roboto:n3,n7"],
@@ -39,25 +36,40 @@ export default {
     name: "fade",
     mode: "out-in",
   },
-  env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_ENVIRONMENT: config.CTF_ENVIRONMENT,
-  },
   /*
    ** Nuxt.js modules
    */
   modules: ["nuxt-webfontloader", "@nuxtjs/apollo"],
   apollo: {
     clientConfigs: {
-      default: "~/plugins/apollo-client-config.js"
+      default: "~/plugins/apollo-client-config.js",
     },
+
+    // setup a global error handler
+    errorHandler: "~/plugins/apollo-error-handler.js",
   },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
+    cssSourceMap: false,
+    // analyze: {
+    //   analyzerMode: "static",
+    // },
+    extractCSS: true,
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                styles: {
+                    name: "styles",
+                    test: /\.(css|vue)$/,
+                    chunks: "all",
+                    enforce: true
+                }
+            }
+        }
+    },
     babel: {
       presets({ isServer }: any) {
         return [["@nuxt/babel-preset-app", { loose: true }]];
