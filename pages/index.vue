@@ -3,15 +3,11 @@
     <div>
       <div>
         <h1>
- 
-    
-              frontpage: {{ helloe.title }}
+          frontpage: {{ data }}
+               frontpage: {{ data.s }}
         </h1>
-  
       </div>
     </div>
-
-   
   </section>
 </template>
 

@@ -1,4 +1,4 @@
-export default (context) => {
+export default context => {
   return {
     httpEndpoint:
       "https://graphql.contentful.com/content/v1/spaces/nriyvl1sdzam",
@@ -10,4 +10,3 @@ export default (context) => {
     getAuth: () => "Bearer 8Xswc4xPm5COXCCYlwplgx0AruGKaJGYr-u1LSwsJVY"
   };
 };
-  

@@ -1,13 +1,14 @@
 import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
 //@ts-ignore
-import { setIntroData } from "~/resources/global";
-
+import { frontpageData } from "~/resources/global";
+interface ITest {
+  query: Function;
+}
 @Component({
   name: "Frontpage",
 })
-export default class Frontpage extends Vue {
-
+export default class FrontpageClass extends Vue {
   head() {
     return {
       title: "frontpage",
@@ -16,9 +17,11 @@ export default class Frontpage extends Vue {
       ],
     };
   }
+
   async asyncData(context: Context) {
     const client = context.app.apolloProvider.defaultClient;
-    const helloe = await setIntroData(client);
-    return { helloe };
+    const data:ITest | undefined = await frontpageData(client);
+    console.debug("dasdta", typeof client.query);
+    return { data };
   }
 }

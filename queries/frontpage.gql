@@ -1,4 +1,4 @@
-query frontpage{
+{
   frontpage(id:"6jGasc0cNzWnSTwiMDzwsW") {
     title
     heroSection {

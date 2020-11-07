@@ -1,4 +1,4 @@
-// graph playground - https://graphql.contentful.com/content/v1/spaces/nriyvl1sdzam/explore?access_token=8Xswc4xPm5COXCCYlwplgx0AruGKaJGYr-u1LSwsJVY
+
 export default {
   target: "static",
   loading: false,

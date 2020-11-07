@@ -1,9 +1,21 @@
 //@ts-ignore
-import frontpage from "~/queries/getFrontpage";
-// intro data function
-export function setIntroData(apolloClient: any) {
-  return apolloClient.query({ query: frontpage }).then(({ response }: any) => {
-    const data = response.frontpage;
-    return data;
-  });
+import frontpage from "~/queries/frontpage";
+
+interface IApolloClient {
+  query: Function;
+}
+interface ITest {
+  query: Function;
+}
+
+export async function frontpageData(apolloClient:IApolloClient) {
+
+  try {
+    const data = await apolloClient.query({
+      query: frontpage,
+    });
+    return data.data.frontpage;
+  } catch (err) {
+    console.log(err);
+  }
 }
