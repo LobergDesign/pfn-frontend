@@ -1,10 +1,7 @@
 const frontpageQuery = `query {
-    frontpage(id: "6jGasc0cNzWnSTwiMDzwsW") {
+    frontpage(id: "5VyBhlOzhQsJndF2GyhZ5i") {
       title
-      heroSection {
-        title
-        subtitle
-      }
+      subtitle
     }
   }
 `;

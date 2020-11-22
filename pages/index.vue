@@ -3,14 +3,9 @@
     <div>
       <div>
         <h1>
-          {{ dataFromTs.title }}
+          {{ data.title }}
         </h1>
-        <h2>
-          {{ dataFromTs.heroSection.subtitle }}
-        </h2>
-        <h2>
-          {{ dataFromTs.heroSection.title }}
-        </h2>
+        <h2>{{ data.subtitle }}</h2>
       </div>
     </div>
   </section>

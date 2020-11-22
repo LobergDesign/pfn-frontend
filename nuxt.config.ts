@@ -55,9 +55,9 @@ export default {
    */
   build: {
     cssSourceMap: false,
-    analyze: {
-      analyzerMode: "static",
-    },
+    // analyze: {
+    //   analyzerMode: "static",
+    // },
     extractCSS: true,
     optimization: {
         splitChunks: {

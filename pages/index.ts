@@ -18,7 +18,7 @@ export default class FrontpageClass extends Vue {
 
   async asyncData(context: Context) {
     const client = context.app.$graphql;
-    const dataFromTs = await GetFrontpage(client);
-    return { dataFromTs };
+    const data = await GetFrontpage(client);
+    return { data };
   }
 }

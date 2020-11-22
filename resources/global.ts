@@ -5,8 +5,8 @@ interface IGraphQlClient {
   }
 export async function GetFrontpage(graphQlClient: IGraphQlClient) {
     try {
-        const page = await graphQlClient.request(frontpageQuery);
-        return page.frontpage;
+        const pageData = await graphQlClient.request(frontpageQuery);
+        return pageData.frontpage;
     } catch (err) {
         console.log(err);
     }
