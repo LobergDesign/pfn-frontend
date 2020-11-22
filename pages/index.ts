@@ -1,10 +1,8 @@
 import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
 //@ts-ignore
-import { frontpageData } from "~/resources/global";
-interface ITest {
-  query: Function;
-}
+import { GetFrontpage } from "~/resources/global";
+
 @Component({
   name: "Frontpage",
 })
@@ -19,9 +17,8 @@ export default class FrontpageClass extends Vue {
   }
 
   async asyncData(context: Context) {
-    const client = context.app.apolloProvider.defaultClient;
-    const data:ITest | undefined = await frontpageData(client);
-    console.debug("dasdta", typeof client.query);
-    return { data };
+    const client = context.app.$graphql;
+    const dataFromTs = await GetFrontpage(client);
+    return { dataFromTs };
   }
 }

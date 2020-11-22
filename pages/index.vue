@@ -3,13 +3,17 @@
     <div>
       <div>
         <h1>
-          frontpage: {{ data }}
-               frontpage: {{ data.s }}
+          {{ dataFromTs.title }}
         </h1>
+        <h2>
+          {{ dataFromTs.heroSection.subtitle }}
+        </h2>
+        <h2>
+          {{ dataFromTs.heroSection.title }}
+        </h2>
       </div>
     </div>
   </section>
 </template>
-
 
 <script src="./index.ts"></script>

@@ -39,14 +39,15 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["nuxt-webfontloader", "@nuxtjs/apollo"],
-  apollo: {
-    clientConfigs: {
-      default: "~/plugins/apollo-client-config.js",
+  modules: ["nuxt-webfontloader", "nuxt-graphql-request"],
+  graphql: {
+    endpoint: "https://graphql.contentful.com/content/v1/spaces/nriyvl1sdzam",
+    includeNodeModules: true,
+    options: {
+      headers: {
+        authorization: "Bearer 8Xswc4xPm5COXCCYlwplgx0AruGKaJGYr-u1LSwsJVY",
+      },
     },
-
-    // setup a global error handler
-    errorHandler: "~/plugins/apollo-error-handler.js",
   },
   /*
    ** Build configuration
@@ -54,9 +55,9 @@ export default {
    */
   build: {
     cssSourceMap: false,
-    // analyze: {
-    //   analyzerMode: "static",
-    // },
+    analyze: {
+      analyzerMode: "static",
+    },
     extractCSS: true,
     optimization: {
         splitChunks: {
