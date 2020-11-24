@@ -1,7 +1,7 @@
 import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
 //@ts-ignore
-import { GetFrontpage } from "~/resources/global";
+import { frontpageQueryData } from "~/resources/global";
 
 @Component({
   name: "Frontpage",
@@ -18,7 +18,8 @@ export default class FrontpageClass extends Vue {
 
   async asyncData(context: Context) {
     const client = context.app.$graphql;
-    const data = await GetFrontpage(client);
+    const data = await frontpageQueryData(client);
+    console.debug("data", data);
     return { data };
   }
 }

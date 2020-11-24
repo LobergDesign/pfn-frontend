@@ -1,4 +1,3 @@
-
 export default {
   target: "static",
   loading: false,
@@ -20,7 +19,15 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxt/typescript-build"],
+  buildModules: ["@nuxt/typescript-build", "nuxt-lazysizes"],
+  lazySizes: {
+    extendAssetUrls: {
+      img: "data-src",
+      source: "data-srcset",
+      // Component with custom props
+      AppImage: ["source-url", "image-url"],
+    },
+  },
   webfontloader: {
     google: {
       families: ["Open Sans:n3,n4", "Roboto:n3,n7"],
@@ -60,16 +67,16 @@ export default {
     // },
     extractCSS: true,
     optimization: {
-        splitChunks: {
-            cacheGroups: {
-                styles: {
-                    name: "styles",
-                    test: /\.(css|vue)$/,
-                    chunks: "all",
-                    enforce: true
-                }
-            }
-        }
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: "styles",
+            test: /\.(css|vue)$/,
+            chunks: "all",
+            enforce: true,
+          },
+        },
+      },
     },
     babel: {
       presets({ isServer }: any) {
