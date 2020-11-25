@@ -2,6 +2,7 @@ import { Context } from "@nuxt/types";
 import { Vue, Component } from "nuxt-property-decorator";
 //@ts-ignore
 import { frontpageQueryData } from "~/resources/global";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 @Component({
   name: "Frontpage",
@@ -19,7 +20,8 @@ export default class FrontpageClass extends Vue {
   async asyncData(context: Context) {
     const client = context.app.$graphql;
     const data = await frontpageQueryData(client);
-    console.debug("data", data);
-    return { data };
+    const bodytext = documentToHtmlString(data.bodytext?.json);
+
+    return { data, bodytext };
   }
 }

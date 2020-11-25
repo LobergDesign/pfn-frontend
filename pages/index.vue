@@ -30,6 +30,8 @@
         <p v-if="data.image.description" class="caption">
           {{ data.image.description }}
         </p>
+        <div v-if="bodytext" v-html="bodytext">
+        </div>
       </div>
     </div>
   </section>

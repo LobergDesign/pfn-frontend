@@ -7,6 +7,9 @@ const frontpageQuery = `query {
       description
       url
     }
+    bodytext{
+      json
+    }
   }
 }
 `;
