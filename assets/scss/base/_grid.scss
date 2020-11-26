@@ -1,19 +1,23 @@
-﻿.container-fluid {
-  padding: 0;
+﻿
+// main wrapper
+.grid-w {
+  max-width: 1600px;
+  width: 85vw;
+  margin: 0 auto;
+}
+// grid row
+.grid-r {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6vw, 1fr));
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  max-width: 100%;
   overflow: hidden;
 }
-@media (min-width: 576px) {
-  .container {
-    max-width: 100%;
+// create all grid column items
+@for $item from 0 to 12 {
+  .grid-c-#{$item} {
+    grid-column: span $item;
   }
 }
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80wv;
-  }
-}
-@media (min-width: 1950px) {
-  .container {
-    max-width: 60vw;
-  }
-}
+

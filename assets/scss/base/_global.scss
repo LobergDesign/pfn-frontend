@@ -1,10 +1,12 @@
 ﻿@import "~assets/scss/settings/_colors.scss";
-@import "~assets/scss/settings/_transitions.scss";
-@import "~assets/scss/tools/_positioning.scss";
 @import "~assets/scss/settings/_fonts.scss";
 @import "~assets/scss/tools/_media-queries.scss";
-@import "~assets/scss/settings/_layout.scss";
-
+.test-div {
+  border: 1px solid gray;
+  min-height: 5rem;
+  width: 100%;
+  padding: 2rem;
+}
 html {
   font-size: 62.5%;
   text-rendering: optimizeLegibility;

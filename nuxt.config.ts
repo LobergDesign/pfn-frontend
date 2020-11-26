@@ -15,7 +15,10 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
   css: ["@/assets/scss/site.scss"],
-  components: true,
+    /*
+     ** Global CSS
+     */
+    
   /*
    ** Nuxt.js dev-modules
    */
@@ -84,4 +87,5 @@ export default {
       },
     },
   },
+  components: [{ path: "~/components", extensions: ["vue"] }]
 };

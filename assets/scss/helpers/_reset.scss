@@ -1,7 +1,6 @@
 ﻿* {
 	box-sizing: border-box;
 }
-
 body {
 	margin: 0;
 	padding: 0;
@@ -15,14 +14,6 @@ button {
 	cursor: pointer;
 }
 
-a,
-button,
-input,
-textarea {
-	&:focus, &:active {
-		outline: none;
-	}
-}
 button::-moz-focus-inner {
 	border: 0;
 }
