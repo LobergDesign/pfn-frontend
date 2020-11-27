@@ -1,5 +1,4 @@
-﻿
-// main wrapper
+﻿// main wrapper
 .grid-w {
   max-width: 1600px;
   width: 85vw;
@@ -8,16 +7,15 @@
 // grid row
 .grid-r {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(6vw, 1fr));
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
-  max-width: 100%;
-  overflow: hidden;
+  grid-template-columns: repeat(16, 1fr);
+  grid-gap: 3.2%;
+  margin-bottom: 2rem;
 }
 // create all grid column items
-@for $item from 0 to 12 {
+@for $item from 1 to 17 {
   .grid-c-#{$item} {
     grid-column: span $item;
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
   }
 }
-
