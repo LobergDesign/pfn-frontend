@@ -3,6 +3,30 @@
 // @import "~assets/styles/tools/_positioning.scss";
 // @import "~assets/styles/tools/media-queries";
 
-header{
-    background-color: red;
+.header{
+    // logo
+    &__logo{
+        max-width: 11rem;
+    }
+    // nav
+    &__nav{
+    }
+    &__nav-list{
+
+    }
+    &__nav-list-item{
+        display: inline-block;
+    }
+    &__nav-list-item a{
+        display: block;
+        padding: 2rem;
+    }
+
+    &__nav-list-item a.nuxt-link-exact-active{
+        font-weight: bold;
+    }
+    // cta button
+    .btn{
+        margin-left: 3rem;
+    }
 }

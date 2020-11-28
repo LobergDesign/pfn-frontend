@@ -3,6 +3,10 @@ export default {
   loading: false,
   head: {
     title: process.env.npm_package_name || "",
+    htmlAttrs: {
+      lang: "da_DK",
+      amp: true,
+    },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -14,48 +18,32 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
+  /*
+   ** Global CSS
+   */
+  // publicRuntimeConfig: {
+  //   baseUrl: process.env.BASE_URL || "https://www.live.site.dk",
+  //   graphqlToken: process.env.GRAPHQL_TOKEN
+  // },
+  // privateRuntimeConfig: {
+  //   graphqlToken: process.env.GRAPHQL_TOKEN
+  // },
   css: ["@/assets/scss/site.scss"],
-    /*
-     ** Global CSS
-     */
-    
+
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: ["@nuxt/typescript-build", "nuxt-lazysizes"],
-  lazySizes: {
-    extendAssetUrls: {
-      img: "data-src",
-      source: "data-srcset",
-      // Component with custom props
-      AppImage: ["source-url", "image-url"],
-    },
-  },
-  webfontloader: {
-    google: {
-      families: ["Open Sans:n3,n4", "Roboto:n3,n7"],
-      urls: [
-        // for each Google Fonts add url + options you want
-        // here add font-display option
-        "https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap",
-        "https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap",
-      ],
-    },
-  },
-  pageTransition: {
-    name: "fade",
-    mode: "out-in",
-  },
   /*
    ** Nuxt.js modules
    */
   modules: ["nuxt-webfontloader", "nuxt-graphql-request"],
   graphql: {
-    endpoint: "https://graphql.contentful.com/content/v1/spaces/nriyvl1sdzam",
+    endpoint: process.env.GRAPHQL_ENDPOINT,
     includeNodeModules: true,
     options: {
       headers: {
-        authorization: "Bearer 8Xswc4xPm5COXCCYlwplgx0AruGKaJGYr-u1LSwsJVY",
+        authorization: "Bearer " + process.env.GRAPHQL_TOKEN,
       },
     },
   },
@@ -87,5 +75,33 @@ export default {
       },
     },
   },
-  components: [{ path: "~/components", extensions: ["vue"] }]
+  webfontloader: {
+    google: {
+      families: ["Open Sans:n3,n4", "Roboto:n3,n7"],
+      urls: [
+        // for each Google Fonts add url + options you want
+        // here add font-display option
+        "https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap",
+        "https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap",
+      ],
+    },
+  },
+  router: {
+    // add trailing slash to routes
+    trailingSlash: true,
+    linkActiveClass: "is-active",
+  },
+  pageTransition: {
+    name: "fade",
+    mode: "out-in",
+  },
+  lazySizes: {
+    extendAssetUrls: {
+      img: "data-src",
+      source: "data-srcset",
+      // Component with custom props
+      AppImage: ["source-url", "image-url"],
+    },
+  },
+  components: [{ path: "~/components", extensions: ["vue"] }],
 };

@@ -1,13 +1,14 @@
 <template>
-  <section class="container">
-    <div>
-      <div>
+  <!-- move to hero comp -->
+  <section>
+    <div class="grid-r">
+      <div class="grid-c-11-offset-2">
         <h1>
           {{ data.title }}
         </h1>
         <h2>{{ data.subtitle }}</h2>
       </div>
-      <div>
+      <div class="grid-c-14">
         <picture>
           <source
             :data-srcset="data.image.url + '?w=500&fm=webp'"
@@ -30,8 +31,7 @@
         <p v-if="data.image.description" class="caption">
           {{ data.image.description }}
         </p>
-        <div v-if="bodytext" v-html="bodytext">
-        </div>
+        <div v-if="bodytext" v-html="bodytext"></div>
       </div>
     </div>
   </section>
