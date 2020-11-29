@@ -16,12 +16,18 @@ export default class FrontpageClass extends Vue {
       ],
     };
   }
-  
+
+  //   async asyncData(context: Context) {
+  //     const client = context.app.$graphql;
+  //     const data = await frontpageQueryData(client);
+  //     const bodytext = documentToHtmlString(data.bodytext?.json);
+  // console.log("data", data);
+  //     return { data, bodytext };
+  //   }
   async asyncData(context: Context) {
     const client = context.app.$graphql;
     const data = await frontpageQueryData(client);
-    const bodytext = documentToHtmlString(data.bodytext?.json);
-
-    return { data, bodytext };
+    console.log("data", data);
+    return { data };
   }
 }
