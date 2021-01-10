@@ -77,11 +77,11 @@ export default {
   },
   webfontloader: {
     google: {
-      families: ["Open Sans:n3,n4", "Roboto:n3,n7"],
+      families: ["Playfair Display", "Roboto:n3,n7"],
       urls: [
         // for each Google Fonts add url + options you want
         // here add font-display option
-        "https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap",
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;800&display=swap",
         "https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap",
       ],
     },

@@ -1,6 +1,13 @@
 // helpers
-@import "helpers/_reset.scss";
-@import "helpers/_helping-classes.scss";
+@import "base/_reset.scss";
+
+// settins
+@import "settings/_fonts.scss";
+@import "settings/_vars.scss";
+
+// tools
+@import "tools/_mixins.scss";
+@import "tools/_helping-classes.scss";
 
 // base
 @import "base/_global.scss";

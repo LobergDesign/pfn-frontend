@@ -1,21 +1,18 @@
 @font-face {
-	font-family: "gordita-regular";
-	src: local("gordita-regular"), local("gorditaregular"), url('/fonts/gordita-regular.woff2') format('woff2'), url('/fonts/gordita-regular.woff') format('woff');
-}
-@font-face {
 	font-family: "gordita-medium";
-	src: local("gordita-semibold"), local("gorditamedium"), url('/fonts/gordita-medium.woff2') format('woff2'), url('/fonts/gordita-semibold.woff') format('woff');
+	src: local("gordita-semibold"), local("gorditamedium"), url("/fonts/gordita-medium.woff2") format("woff2"),
+		url("/fonts/gordita-semibold.woff") format("woff");
 }
 @font-face {
 	font-family: "gordita-bold";
-	src: local("gordita-bold"), local("gorditabold"), url('/fonts/gordita-bold.woff2') format('woff2'), url('/fonts/gordita-bold.woff') format('woff');
+	src: local("gordita-bold"), local("gorditabold"), url("/fonts/gordita-bold.woff2") format("woff2"),
+		url("/fonts/gordita-bold.woff") format("woff");
 }
 
 //-- regular --//
-@mixin font-gordita-regular {
-	font-family: "gordita-regular", sans-serif;
-	font-style: normal;
-	font-display: swap;
+@mixin font-playfair-display {
+	font-family: "Playfair Display";
+	font-weight: normal;
 }
 //-- semi bold --//
 @mixin font-gordita-medium {
