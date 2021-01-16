@@ -1,9 +1,13 @@
 <template>
-  <div>
-    <!-- move to hero comp -->
-    <HeroComponent :heroContent="data.heroData" />
-    
-  </div>
+	<div>
+		<HeroComponent
+			:heroHeadline="data.pageHeadline"
+			:heroBodytext="data.bodytext"
+			:heroImage="data.image"
+			:heroSubtitle="data.subtitle"
+		/>
+		<!-- {{ data }} -->
+	</div>
 </template>
 
 <script src="./index.ts"></script>

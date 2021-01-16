@@ -1,5 +1,6 @@
 @import "~/assets/scss/tools/_mixins.scss";
 @import "~/assets/scss/settings/_vars.scss";
+@import "~/assets/scss/settings/_fonts.scss";
 
 .header {
   @include grid-wrap;
@@ -26,7 +27,7 @@
   }
 
   &__nav-list-item a.nuxt-link-exact-active {
-    font-weight: bold;
+    @include font-pt-sans-bold;
   }
   // cta button
   .btn {

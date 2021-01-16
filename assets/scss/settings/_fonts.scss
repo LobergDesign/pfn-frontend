@@ -1,28 +1,41 @@
-@font-face {
-	font-family: "gordita-medium";
-	src: local("gordita-semibold"), local("gorditamedium"), url("/fonts/gordita-medium.woff2") format("woff2"),
-		url("/fonts/gordita-semibold.woff") format("woff");
+//-- pt serif --//
+@mixin font-pt-serif {
+	font-family: "PT Serif";
+	font-weight: 400;
 }
-@font-face {
-	font-family: "gordita-bold";
-	src: local("gordita-bold"), local("gorditabold"), url("/fonts/gordita-bold.woff2") format("woff2"),
-		url("/fonts/gordita-bold.woff") format("woff");
+@mixin font-pt-serif-italic {
+	font-family: "PT Serif";
+    font-weight: 400;
+    font-style: italic;
+}
+@mixin font-pt-serif-bold {
+	font-family: "PT Serif";
+	font-weight: 700;
+}
+@mixin font-pt-serif-bold-italic {
+	font-family: "PT Serif";
+	font-weight: 700;
+	font-style: italic;
 }
 
-//-- regular --//
-@mixin font-playfair-display {
-	font-family: "Playfair Display";
-	font-weight: normal;
+// pt sans
+@mixin font-pt-sans {
+	font-family: "PT Sans";
+	font-weight: 400;
 }
-//-- semi bold --//
-@mixin font-gordita-medium {
-	font-family: "gordita-medium", sans-serif;
-	font-style: normal;
-	font-display: swap;
+@mixin font-pt-sans-italic {
+	font-family: "PT Sans";
+    font-weight: 400;
+    font-style: italic;
 }
-//-- bold --//
-@mixin font-gordita-bold {
-	font-family: "gordita-bold", sans-serif;
-	font-style: normal;
-	font-display: swap;
+@mixin font-pt-sans-bold {
+	font-family: "PT Sans";
+	font-weight: 700;
 }
+@mixin font-pt-sans-bold-italic {
+	font-family: "PT Sans";
+	font-weight: 700;
+	font-style: italic;
+}
+
+

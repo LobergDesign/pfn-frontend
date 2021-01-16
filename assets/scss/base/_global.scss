@@ -17,7 +17,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: $color-white;
-	font-family: sans-serif;
+	@include font-pt-sans;
 }
 .main-content {
 	margin-top: 20rem;

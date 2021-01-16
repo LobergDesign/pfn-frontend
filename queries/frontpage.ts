@@ -1,7 +1,7 @@
 const frontpageQuery = `query {
   frontpage(id: "5VyBhlOzhQsJndF2GyhZ5i") {
-    title
     subtitle
+    pageHeadline{json}
     image {
       title
       description

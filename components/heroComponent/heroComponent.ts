@@ -1,19 +1,21 @@
 import { Vue, Component, Prop } from "nuxt-property-decorator";
-import { IHero } from "~/types/global";
+import { IImage } from "~/interfaces/global";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 @Component({
-    name: "heroComponent"
+	name: "heroComponent",
 })
 export default class HeroComponent extends Vue {
-  @Prop() heroContent!: IHero;
+	@Prop({ type: Object, required: true })
+	readonly heroHeadline!: Object;
+	@Prop({ type: Object, required: true })
+	readonly heroBodytext!: Object;
+	@Prop({ type: Object as () => IImage, required: true })
+	readonly heroImage!: IImage;
+	@Prop({ type: String, required: true })
+	readonly heroSubtitle!: String;
 
-  public title = this.heroContent.title;
-  public subtitle = this.heroContent.subtitle;
-  public bodytext = this.heroContent.bodytext;
-  public image = this.heroContent.image;
-
-mounted(){
-    console.debug("this.hero", this.heroContent);
-}
-
+	public toHtmlString(content: any) {
+		return documentToHtmlString(content);
+	}
 }

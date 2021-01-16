@@ -28,7 +28,9 @@ export default {
   // privateRuntimeConfig: {
   //   graphqlToken: process.env.GRAPHQL_TOKEN
   // },
-  css: ["@/assets/scss/site.scss"],
+  css: ["~/assets/scss/site.scss"],
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+	plugins: ["~/plugins/resources/cms"],
 
   /*
    ** Nuxt.js dev-modules
@@ -69,23 +71,24 @@ export default {
         },
       },
     },
-    babel: {
-      presets({ isServer }: any) {
-        return [["@nuxt/babel-preset-app", { loose: true }]];
-      },
-    },
+    // babel: {
+    //   presets({ isServer }: any) {
+    //     return [["@nuxt/babel-preset-app", { loose: true }]];
+    //   },
+    // },
   },
   webfontloader: {
     google: {
-      families: ["Playfair Display", "Roboto:n3,n7"],
+      families: ["PT Serif", "PT Sans"],
       urls: [
         // for each Google Fonts add url + options you want
         // here add font-display option
-        "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;800&display=swap",
-        "https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap",
+        "https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap",
+        "https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700",
       ],
     },
   },
+  
   router: {
     // add trailing slash to routes
     trailingSlash: true,
@@ -104,4 +107,12 @@ export default {
     },
   },
   components: [{ path: "~/components", extensions: ["vue"] }],
+  loaders: {
+		ts: {
+			silent: true,
+		},
+		tsx: {
+			silent: true,
+		},
+	},
 };
