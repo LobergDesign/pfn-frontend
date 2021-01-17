@@ -1,10 +1,10 @@
 import { Context } from "vm";
 
 export default function (ctx: Context, inject: any) {
-	async function getPageData(query: any) {
+	async function getData(query: any) {
 		const client = ctx.app.$graphql;
-		const pageData = await client.request(query);
-		const data = pageData.frontpage;
+		const getData = await client.request(query);
+		const data = getData;
 		return data;
 	}
 
@@ -25,6 +25,6 @@ export default function (ctx: Context, inject: any) {
 	// }
 
 	inject("dataApi", {
-		getPageData,
+		getData,
 	});
 }
