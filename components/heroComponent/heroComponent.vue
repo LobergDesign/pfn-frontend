@@ -1,12 +1,14 @@
 <template>
 	<section class="hero">
 		<div class="grid-r">
-			<div class="grid-c-11-offset-2">
-				<h1 v-if="heroHeadline" v-html="toHtmlString(heroHeadline.json)"></h1>
+			<div class="grid-c-12-offset-2">
+				<h1 v-if="heroHeadline" class="hero__title--large" v-html="toHtmlString(heroHeadline.json)"></h1>
 
-				<h2 v-if="heroSubtitle" class="headline-3">{{ heroSubtitle }}</h2>
+				<h2 v-if="heroSubtitle" class="hero__sub-title">{{ heroSubtitle }}</h2>
+
+				<div v-html="toHtmlString(heroBodytext.json)"></div>
 			</div>
-			<div class="grid-c-14">
+			<div class="grid-c-16">
 				<picture>
 					<source
 						:data-srcset="heroImage.url + '?w=500&fm=webp'"
@@ -22,14 +24,9 @@
 						src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 						:data-src="heroImage.url + '?w=1400'"
 						:alt="heroImage.title"
-						class="lazyload"
+						class="lazyload hero__image"
 					/>
 				</picture>
-
-				<!-- <p v-if="heroImage.description" class="caption">
-          {{ heroImage.description }}
-        </p>
-        <div v-if="heroBodytext" v-html="heroBodytext"></div> -->
 			</div>
 		</div>
 	</section>

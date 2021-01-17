@@ -19,6 +19,7 @@ export default class FrontpageClass extends Vue {
 	async asyncData({ $dataApi }: Context) {
 		const pageData = await $dataApi.getPageData(frontpageQuery);
 		const data = pageData;
+		console.debug("data", data);
 		return { data };
 	}
 }

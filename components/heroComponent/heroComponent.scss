@@ -1,7 +1,23 @@
-// @import "~assets/styles/settings/_colors.scss";
-// @import "~assets/styles/settings/_transitions.scss";
-// @import "~assets/styles/tools/_positioning.scss";
-// @import "~assets/styles/tools/media-queries";
+ @import "~assets/scss/tools/_mixins.scss";
 
 .hero{
+    &__title{
+
+    }
+    &__title--large{
+        @include fluid-type(40px, 90px);
+        margin-bottom: 1rem;
+        p{
+            @include fluid-type(40px, 90px);
+            margin-bottom: 1rem;
+        }
+    }
+    &__sub-title{
+        @include fluid-type(20px, 30px);
+       
+    }
+    &__image{
+        margin-top: 4rem;
+        width: 100%;
+    }
 }
