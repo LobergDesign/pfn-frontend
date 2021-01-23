@@ -1,10 +1,13 @@
 <template>
 	<header class="header">
 		<ul>
-			<li v-for="(item, index) in menuItems.items" :key="index">
-				<nuxt-link :to="item.slug"> 
-          {{ item.slug }}
-        </nuxt-link>
+			<li v-for="(item, index) in menuItems.items" :key="index" style="display:inline">
+				<nuxt-link :to="item.slug">
+					{{ item.slug }}
+					<!-- <div>
+							{{ item.__typename }}
+					</div> -->
+				</nuxt-link>
 			</li>
 		</ul>
 		<div class="grid-r">

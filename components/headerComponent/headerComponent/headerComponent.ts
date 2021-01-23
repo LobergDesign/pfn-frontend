@@ -10,8 +10,8 @@ export default class HeaderComponent extends Vue {
 		// @ts-ignore
 		const dataApi = this.$root.context.$dataApi;
 		const globalData = await dataApi.getData(menuQuery);
-                const data = globalData;
-                console.debug("data", data.globalSettings.mainMenuCollection);
+		const data = globalData;
+		console.debug("dadd tsa", data.globalSettings.mainMenuCollection);
 		this.menuItems = data.globalSettings.mainMenuCollection;
 	}
 }
