@@ -1,7 +1,12 @@
 <template>
-	<div>
-		<h2>LecurePage</h2>
-	</div>
+	<main>
+			<HeroComponent
+			:heroHeadline="data.pageHeadline"
+			:heroBodytext="data.bodytext"
+			:heroImage="data.image"
+			:heroSubtitle="data.subtitle"
+		/>
+	</main>
 </template>
 
 <script src="./index.ts"></script>

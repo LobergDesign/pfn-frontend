@@ -41,7 +41,7 @@ export default {
 	/*
 	 ** Nuxt.js modules
 	 */
-	modules: ["nuxt-webfontloader", "~/modules/extendRoutes"],
+	modules: ["nuxt-webfontloader"],
 	graphql: {
 		endpoint: process.env.GRAPHQL_ENDPOINT,
 		includeNodeModules: true,

@@ -1,6 +1,11 @@
 <template>
 	<div>
-		<h2>AboutPage</h2>
+		<HeroComponent
+			:heroHeadline="data.pageHeadline"
+			:heroBodytext="data.bodytext"
+			:heroImage="data.image"
+			:heroSubtitle="data.subtitle"
+		/>
 	</div>
 </template>
 

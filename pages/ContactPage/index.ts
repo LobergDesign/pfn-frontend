@@ -3,7 +3,7 @@ import { Vue, Component } from "nuxt-property-decorator";
 //@ts-ignore
 import { frontpageQueryData } from "~/resources/global";
 // import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { frontpageQuery } from "~/queries/frontpage";
+import { pageQuery } from "~/queries/contact";
 
 @Component({
 	name: "ContactPage",
@@ -16,9 +16,15 @@ export default class ContactPage extends Vue {
 		};
 	}
 
-	async asyncData({ $dataApi }: Context) {
-		const pageData = await $dataApi.getData(frontpageQuery);
-		const data = pageData;
-		return { data };
+	async asyncData({ $dataApi, error }: Context) {
+		const response = await $dataApi.getData(pageQuery);
+		const responseData = response.data;
+		if(!responseData?.contactPage){
+			return error({
+				statusCode: response.status,
+				message: response.errors
+			});
+		}
+		return { data: responseData.contactPage };
 	}
 }

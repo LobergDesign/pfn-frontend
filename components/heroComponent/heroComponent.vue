@@ -6,9 +6,9 @@
 
 				<h2 v-if="heroSubtitle" class="hero__sub-title">{{ heroSubtitle }}</h2>
 
-				<div v-html="toHtmlString(heroBodytext.json)"></div>
+				<div v-if="heroBodytext" v-html="toHtmlString(heroBodytext.json)"></div>
 			</div>
-			<div class="grid-c-16">
+			<div class="grid-c-16" v-if="heroImage">
 				<picture>
 					<source
 						:data-srcset="heroImage.url + '?w=500&fm=webp'"

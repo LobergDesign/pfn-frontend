@@ -33,23 +33,34 @@ import { Context } from "vm";
 
 export default function (ctx: Context, inject: any) {
 	// get data funciton with query paramater
-	async function getData(query: any) {
+	const getData = async (query: any) => {
 		const client = ctx.app.$graphql;
-		return handleResponse(await client.request(query));
-	}
+		try {
+			return handleResponse(await client.request(query));
+		} catch (error: any) {
+			return getErrorResponse(error);
+		}
+	};
 
 	// create response function to handle errors
-	async function handleResponse(response: any) {
+	const handleResponse = async (response: any) => {
 		const data = await response;
-		 console.log("response from handæle", response);
-		const {errors, status, extensions} = response;
-		return { 
+		const { errors, status } = response;
+		return {
 			data,
 			errors,
 			status,
-			extensions
 		};
-	}
+	};
+
+	// catch error
+	const getErrorResponse = (error: any) => {
+		return {
+			ok: false,
+			status: 500,
+			statusText: error.message,
+		};
+	};
 
 	// inject get data as dataApi to use in app as this.$dataApi
 	inject("dataApi", {

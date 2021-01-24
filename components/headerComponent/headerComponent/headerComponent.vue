@@ -1,15 +1,5 @@
 <template>
 	<header class="header">
-		<ul>
-			<li v-for="(item, index) in menuItems.items" :key="index" style="display:inline">
-				<nuxt-link :to="item.slug">
-					{{ item.slug }}
-					<!-- <div>
-							{{ item.__typename }}
-					</div> -->
-				</nuxt-link>
-			</li>
-		</ul>
 		<div class="grid-r">
 			<div class="grid-c-4">
 				<nuxt-link to="/"><img src="/pfn-logo.png" class="header__logo" /></nuxt-link>
@@ -17,8 +7,10 @@
 			<div class="grid-c-12">
 				<nav class="header__nav full-height">
 					<ul class="reset-ul header__nav-list full-height flex-end flex-vertical-center">
-						<li class="header__nav-list-item">
-							<nuxt-link to="/">Forside</nuxt-link>
+						<li v-for="(item, index) in menuItems.items" :key="index" class="header__nav-list-item">
+							<nuxt-link :to="'/' + item.slug + '/'">
+								{{ item.slug.replace("-", " ") }}
+							</nuxt-link>
 						</li>
 						<li class="header__nav-list-item">
 							<nuxt-link to="/grid/">Grid page</nuxt-link>

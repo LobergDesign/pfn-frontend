@@ -19,18 +19,12 @@ export default class FrontpageClass extends Vue {
 	async asyncData({ $dataApi, error }: Context) {
 		const response = await $dataApi.getData(frontpageQuery);
 		const responseData = response.data;
-
-		const check = response.data.frontpage ? "yes": "no";
-		console.debug("chedckd", check);
-		if(!responseData.frontpage){
-
+		if(!responseData?.frontpage){
 			return error({
 				statusCode: response.status,
-				message: response.statusText
+				message: response.errors
 			});
 		}
-
-		console.debug("daddsta", responseData);
 		return { data: responseData.frontpage };
 	}
 }
