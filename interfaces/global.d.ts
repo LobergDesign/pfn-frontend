@@ -2,6 +2,7 @@
 export declare module "@nuxt/types" {
 	interface Context {
 		$dataApi: frontpageQueryData;
+		error: any;
 	}
 }
 export declare interface IGraphQlClient {

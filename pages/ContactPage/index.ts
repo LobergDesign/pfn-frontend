@@ -18,7 +18,7 @@ export default class ContactPage extends Vue {
 
 	async asyncData({ $dataApi }: Context) {
 		const pageData = await $dataApi.getData(frontpageQuery);
-		const data = pageData.frontpage;
+		const data = pageData;
 		return { data };
 	}
 }

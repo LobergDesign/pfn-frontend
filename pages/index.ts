@@ -16,9 +16,21 @@ export default class FrontpageClass extends Vue {
 		};
 	}
 
-	async asyncData({ $dataApi }: Context) {
-		const pageData = await $dataApi.getData(frontpageQuery);
-		const data = pageData.frontpage;
-		return { data };
+	async asyncData({ $dataApi, error }: Context) {
+		const response = await $dataApi.getData(frontpageQuery);
+		const responseData = response.data;
+
+		const check = response.data.frontpage ? "yes": "no";
+		console.debug("chedckd", check);
+		if(!responseData.frontpage){
+
+			return error({
+				statusCode: response.status,
+				message: response.statusText
+			});
+		}
+
+		console.debug("daddsta", responseData);
+		return { data: responseData.frontpage };
 	}
 }

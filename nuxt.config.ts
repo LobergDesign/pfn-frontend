@@ -37,11 +37,11 @@ export default {
 	/*
 	 ** Nuxt.js dev-modules
 	 */
-	buildModules: ["@nuxt/typescript-build", "nuxt-lazysizes"],
+	buildModules: ["@nuxt/typescript-build", "nuxt-lazysizes", "nuxt-graphql-request"],
 	/*
 	 ** Nuxt.js modules
 	 */
-	modules: ["nuxt-webfontloader", "nuxt-graphql-request"],
+	modules: ["nuxt-webfontloader", "~/modules/extendRoutes"],
 	graphql: {
 		endpoint: process.env.GRAPHQL_ENDPOINT,
 		includeNodeModules: true,

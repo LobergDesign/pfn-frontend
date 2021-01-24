@@ -1,28 +1,21 @@
+import { GraphQLClient } from "graphql-request";
+import { menuQuery } from "../../queries/global";
+const siteStructure = async () => {
+	const endpoint = process.env.GRAPHQL_ENDPOINT as string;
+	const token = process.env.GRAPHQL_TOKEN;
+	const graphQLClient = new GraphQLClient(endpoint, {
+		headers: {
+			authorization: "Bearer " + token,
+		},
+	});
+	const data = await graphQLClient.request(menuQuery);
+	const dataResponse = data.globalSettings.mainMenuCollection;
 
-
-const siteStructure = () => {
-	const structure: any = [
-		{
-			__typename: "AboutPage",
-			slug: "om-mig",
-		},
-		{
-			__typename: "CoachingPage",
-			slug: "coaching",
-		},
-		{
-			__typename: "ContactPage",
-			slug: "kontakt",
-		},
-		{
-			__typename: "LecturePage",
-			slug: "foredrag",
-		},
-	];
-	return structure;
+	return dataResponse.items;
 };
 
 export async function extendRoutes(routes: any, resolve: (...param: string[]) => Vue) {
+
 	// api call to sitemap
 	// model:  For pagetype (used to find component from pages)
 	// name:   Best practice to use name in component routes
@@ -30,9 +23,8 @@ export async function extendRoutes(routes: any, resolve: (...param: string[]) =>
 
 	// collection of all extended routes used for return in end of function.
 	const sitemapRoutes: any = [];
-
-
-	siteStructure().forEach((route: any) => {
+	const sitemap = await siteStructure();
+	sitemap.forEach((route: any) => {
 		// console.log("route", route);
 
 		sitemapRoutes.push({
@@ -51,7 +43,8 @@ export async function generate() {
 	// parent: to render the correct url and component (parent to the page type) eg. /{parent}/article-1
 
 	const routes: any = [];
-	siteStructure().forEach((item: any) => {
+	const sitemap = await siteStructure();
+	sitemap.forEach((item: any) => {
 		// console.log("item", item);
 		routes.push({
 			route: `/${item.slug}/`,
