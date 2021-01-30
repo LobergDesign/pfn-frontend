@@ -115,7 +115,10 @@ export default {
 			AppImage: ["source-url", "image-url"],
 		},
 	},
-	components: [{ path: "~/components", extensions: ["vue"] }],
+	components: [
+		{ path: "~/components", extensions: ["vue"] },
+		{ path: "~/components/gridBlocks", extensions: ["vue"] },
+	],
 	loaders: {
 		ts: {
 			silent: true,

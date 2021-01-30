@@ -7,6 +7,7 @@
 			:heroSubtitle="data.subtitle"
 		/>
 		<!-- {{ data }} -->
+		<GridBlocks :gridContent="data.contentAreaCollection" />
 	</div>
 </template>
 

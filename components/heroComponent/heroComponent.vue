@@ -16,15 +16,15 @@
 						type="image/webp"
 					/>
 					<source
-						:data-srcset="heroImage.url + '?w=1400&fm=webp'"
+						:data-srcset="heroImage.url + '?w=1600&fm=webp'"
 						media="(min-width: 1000px)"
 						type="image/webp"
 					/>
 					<img
 						src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-						:data-src="heroImage.url + '?w=1400'"
+						:data-src="heroImage.url + '?w=1600'"
 						:alt="heroImage.title"
-						class="lazyload hero__image"
+						class="lazyload lazyloaded hero__image"
 					/>
 				</picture>
 			</div>
