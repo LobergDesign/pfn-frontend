@@ -9,8 +9,4 @@ export default class ImageBlock extends Vue {
 
 	public imageItems = this.blockData.imagesCollection;
 	public fullscreen = this.blockData.fullscreen;
-
-	mounted(){
-		console.debug("gridCondtent", this.blockData);
-	}
 }

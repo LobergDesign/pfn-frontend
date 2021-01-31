@@ -32,8 +32,7 @@ const frontpageQuery = `query {
           fullscreen
         }
         ... on TextAndImageArea {
-          title
-          subtitle
+          label
           bodytext {
             json
           }
@@ -44,8 +43,6 @@ const frontpageQuery = `query {
           }
         }
         ... on LayoutTextArea {
-          title
-          subtitle
           bodytext {
             json
           }

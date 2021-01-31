@@ -25,5 +25,12 @@ export declare interface IHero {
 declare interface IImageBlock{
 	readonly imagesCollection?: Array<IImage>;
 	readonly fullscreen?: boolean;
-
+}
+declare interface ITextBlock{
+	readonly bodytext?: object;
+}
+declare interface IImageTextBlock{
+	readonly label?: string;
+	readonly bodytext?: object;
+	readonly image?: IImage;
 }

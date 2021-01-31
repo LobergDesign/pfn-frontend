@@ -1,38 +1,62 @@
 ﻿// main wrapper
 .grid-w {
-  @include grid-wrap;
+	@include grid-wrap;
 }
 // grid row
 .grid-r {
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-gap: 3%;
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	grid-gap: 3%;
 }
 // create all grid column items
 @for $item from 1 to 17 {
-  .grid-c-#{$item} {
-    grid-column: span $item;
-    overflow: hidden;
-  }
+	.grid-c-#{$item} {
+		grid-column: span $item;
+		overflow: hidden;
+	}
 }
 
-// grid row
+//////// grid row
 .grid-r {
-  [class*="grid-c"] {
-    padding-left: 1.3vw;
-    padding-right: 1.3vw;
-  }
-  .grid-r {
-    [class*="grid-c"] {
-      padding-left: 0.8vw;
-      padding-right: 0.8vw;
-    }
-  }
+	[class*="grid-c"] {
+		padding-left: 1.3vw;
+		padding-right: 1.3vw;
+	}
+	.grid-r {
+		margin-left: -0.8vw;
+		margin-right: -0.8vw;
+		[class*="grid-c"] {
+			padding-left: 0.8vw;
+			padding-right: 0.8vw;
+		}
+	}
 }
-
+//////// offsets
 .grid-c-11-offset-2 {
-  grid-column: 2 / span 11;
+	grid-column: 2 / span 11;
 }
 .grid-c-12-offset-2 {
-  grid-column: 2 / span 12;
+	grid-column: 2 / span 12;
+}
+.grid-c-14-offset-2 {
+	grid-column: 2 / span 14;
+}
+
+//////// responsive
+@include viewport-medium{
+	.grid-c-m-16 {
+		grid-column: span 16;
+	}
+}
+
+@include viewport-small {
+	.grid-c-s-16 {
+		grid-column: span 16;
+	}
+	//////// offsets
+	.grid-c-11-offset-2,
+	.grid-c-12-offset-2,
+	.grid-c-14-offset-2 {
+		grid-column: span 16;
+	}
 }
