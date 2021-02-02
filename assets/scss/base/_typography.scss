@@ -43,7 +43,7 @@ h3,
 h4 {
 	@include fluid-type(18px, 20px);
 	margin-top: 0.2rem;
-	margin-bottom: .6rem;
+	margin-bottom: 0.6rem;
 }
 
 b,
@@ -51,7 +51,7 @@ strong {
 	font-weight: 700;
 }
 i {
-font-style: italic;
+	font-style: italic;
 }
 p {
 	@include default-text-style;
@@ -63,9 +63,33 @@ ul li,
 ol li {
 	@include default-text-style;
 }
+.label {
+	position: relative;
+	color: $color-yellow-corn;
+	@include fluid-type(16px, 18px);
+	display: block;
+	@include font-pt-sans-bold;
+	&::before {
+		content: "";
+		position: absolute;
+		transform: translateX(-7vw) translateY(-50%);
+		top: 50%;
+		width: 6vw;
+		height: .2rem;
+		background-color: $color-yellow-corn;
+	}
+}
 blockquote {
 }
 a {
 	@include default-text-style;
 	text-decoration: none;
+}
+
+@include viewport-small{
+	.label {
+		&::before {
+			content: none;
+		}
+	}
 }
