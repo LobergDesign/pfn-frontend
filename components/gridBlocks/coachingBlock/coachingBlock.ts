@@ -6,7 +6,4 @@ export default class CoachingBlock extends Vue {
 	@Prop({ type: Object })
 	readonly blockData!: Object | undefined;
 
-	mounted(){
-		console.debug("gridCondtent", this.blockData);
-	}
 }

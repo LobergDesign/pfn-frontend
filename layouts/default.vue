@@ -4,6 +4,7 @@
 		<div class="main-content">
 			<Nuxt />
 		</div>
-		<FooterComponent />
+		<FooterComponent :footerData="footerData" />
 	</div>
 </template>
+<script src="./default.ts"></script>

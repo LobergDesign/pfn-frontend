@@ -6,7 +6,4 @@ export default class GridBlocks extends Vue {
 	@Prop({ type: Object })
 	readonly gridContent!: Object | undefined;
 
-	mounted(){
-		console.debug("gridCondtent", this.gridContent);
-	}
 }

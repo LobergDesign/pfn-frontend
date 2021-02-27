@@ -1,5 +1,5 @@
 import { Vue, Component } from "nuxt-property-decorator";
-import { menuQuery } from "~/queries/global";
+// import { globalQuery } from "~/queries/global";
 @Component({
 	name: "headerComponent",
 })
@@ -8,9 +8,10 @@ export default class HeaderComponent extends Vue {
 
 	async fetch() {
 		// @ts-ignore
-		const dataApi = this.$root.context.$dataApi;
-		const response = await dataApi.getData(menuQuery);
-		const responseData = response.data;
-		this.menuItems = responseData.globalSettings.mainMenuCollection;
+		// const dataApi = this.$root.context.$dataApi;
+		// const response = await dataApi.getData(globalQuery);
+		// const responseData = response;
+		// console.debug("responseData", responseData)
+		// this.menuItems = responseData.globalSettings.mainMenuCollection;
 	}
 }

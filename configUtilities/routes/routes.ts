@@ -1,5 +1,5 @@
 import { GraphQLClient } from "graphql-request";
-import { menuQuery } from "../../queries/global";
+import { globalQuery } from "../../queries/global";
 const siteStructure = async () => {
 	const endpoint = process.env.GRAPHQL_ENDPOINT as string;
 	const token = process.env.GRAPHQL_TOKEN;
@@ -8,7 +8,7 @@ const siteStructure = async () => {
 			authorization: "Bearer " + token,
 		},
 	});
-	const data = await graphQLClient.request(menuQuery);
+	const data = await graphQLClient.request(globalQuery);
 	const dataResponse = data.globalSettings.mainMenuCollection;
 
 	return dataResponse.items;
