@@ -7,7 +7,7 @@
 			<div class="grid-c-12">
 				<nav class="header__nav full-height">
 					<ul class="reset-ul header__nav-list full-height flex-end flex-vertical-center">
-						<li v-for="(item, index) in menuItems.items" :key="index" class="header__nav-list-item">
+						<li v-for="(item, index) in menuData.items" :key="index" class="header__nav-list-item">
 							<nuxt-link :to="'/' + item.slug + '/'">
 								{{ item.slug.replace("-", " ") }}
 							</nuxt-link>

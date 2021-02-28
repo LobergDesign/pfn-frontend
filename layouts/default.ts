@@ -1,14 +1,10 @@
 import { Vue, Component } from "nuxt-property-decorator";
-import { IFooterObject } from "~/interfaces/global";
+import { IFooterObject, IMenu } from "~/interfaces/global";
 import { globalQuery } from "~/queries/global";
 @Component
 export default class Default extends Vue {
-	public menuData: object[] = [];
+	public menuData: IMenu = {};
 	public footerData: IFooterObject = {};
-
-	mounted() {
-		console.debug("footerData", this.footerData);
-	}
 	async fetch() {
 		const response = await this.$nuxt.context.$dataApi.getData(globalQuery);
 		const {
@@ -24,9 +20,8 @@ export default class Default extends Vue {
 			youTube,
 			zipcodeAndCity,
 		} = response.data.globalSettings;
-
 		this.menuData = mainMenuCollection;
-
+		
 		this.footerData = {
 			footerObject: {
 				empowerMind,
@@ -39,7 +34,7 @@ export default class Default extends Vue {
 				phonenumber,
 				youTube,
 				zipcodeAndCity,
-			}
+			},
 		};
 	}
 }

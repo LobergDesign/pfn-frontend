@@ -41,7 +41,7 @@ export default {
 	/*
 	 ** Nuxt.js modules
 	 */
-	modules: ["nuxt-webfontloader"],
+	modules: ["nuxt-webfontloader", "@nuxtjs/svg"],
 	graphql: {
 		endpoint: process.env.GRAPHQL_ENDPOINT,
 		includeNodeModules: true,
@@ -73,21 +73,10 @@ export default {
 				},
 			},
 		},
-		// babel: {
-		//   presets({ isServer }: any) {
-		//     return [["@nuxt/babel-preset-app", { loose: true }]];
-		//   },
-		// },
 	},
 	webfontloader: {
 		google: {
-			families: ["PT Serif", "PT Sans"],
-			urls: [
-				// for each Google Fonts add url + options you want
-				// here add font-display option
-				"https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap",
-				"https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700",
-			],
+			families: ["PT Serif:400,700", "PT Sans:400,700"],
 		},
 	},
 
@@ -102,6 +91,12 @@ export default {
 		// exclude pages thats unused
 		exclude: [/LecturePage/, /ContactPage/, /AboutPage/, /CoachingPage/],
 		routes: async () => await generate(),
+	},
+	purgeCSS: {
+		// whitelist spicific classes
+		whitelist: ["is-active"],
+		// whitelist spicific classes and all that contains that naming
+		whitelistPatterns: [/__layout/, /__nuxt/, /hooper/, /strong/, /b/, /svg/, /ol/],
 	},
 	pageTransition: {
 		name: "fade",
@@ -121,9 +116,6 @@ export default {
 	],
 	loaders: {
 		ts: {
-			silent: true,
-		},
-		tsx: {
 			silent: true,
 		},
 	},

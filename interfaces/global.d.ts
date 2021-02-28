@@ -51,4 +51,10 @@ declare interface IFooter {
 declare interface IFooterObject{
 	readonly footerObject?: IFooter;
 }
-
+declare interface IMenuItems {
+	readonly slug?: string;
+	readonly __typename?: string;
+}
+declare interface IMenu{
+	readonly items?: Array<IMenuItems>;
+}
