@@ -34,6 +34,10 @@ declare interface IImageTextBlock {
 	readonly bodytext?: object;
 	readonly image?: IImage;
 }
+declare interface ICoachingBlock {
+	readonly title?: string;
+	readonly subtitle?: string;
+}
 
 //////// global data
 declare interface IFooter {

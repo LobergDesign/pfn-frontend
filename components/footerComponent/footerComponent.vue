@@ -30,7 +30,7 @@
 									<SvgLinkedIn />
 								</a>
 							</li>
-							<li v-if="data.youTube">
+							<li v-if="data.youTube" class="flex-bottom">
 								<a :href="data.youTube" class="flex-bottom" target="_blank">
 									<SvgYoutube />
 								</a>

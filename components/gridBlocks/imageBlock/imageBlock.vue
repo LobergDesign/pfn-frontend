@@ -2,7 +2,7 @@
 	<div class="grid-r">
 		<div :class="fullscreen ? 'grid-c-16' : 'grid-c-14-offset-2'">
 			<div v-if="imageItems.items.length > 1" class="grid-r">
-				<div v-for="(item, index) in imageItems.items" :key="index" class="grid-c-8 grid-c-s-16 ">
+				<div v-for="(item, index) in imageItems.items" :key="index" class="grid-c-sm-8 grid-c-16">
 					<picture>
 						<source
 							:data-srcset="item.url + '?w=500&fm=webp'"

@@ -1,37 +1,63 @@
-﻿//////// main wrapper
+﻿$columns: 16;
+$grid-gap: 2vw;
+
+//////// main wrapper
 .grid-w {
 	@include grid-wrap;
 }
 //////// grid row
 .grid-r {
 	display: grid;
-	grid-template-columns: repeat(16, 1fr);
-	// grid-gap: 3%;
+	grid-template-columns: repeat($columns, 1fr);
+	grid-gap: 1.8vw;
+}
+[class^="grid-c"] {
+	grid-column-end: span $columns; //Full width fallback when no column size is define for the screen size.
 }
 //////// create all grid column items
-@for $item from 1 to 17 {
-	.grid-c-#{$item} {
-		grid-column: span $item;
-		overflow: hidden;
+// @for $item from 1 to 17 {
+// 	.grid-c-#{$item} {
+// 		grid-column: span $item;
+// 		overflow: hidden;
+// 	}
+// }
+
+@for $i from 1 through $columns {
+	.grid-c-#{$i} {
+		grid-column-end: span $i;
+	}
+}
+
+@each $size, $abbr in (0, xs), (768px, sm), (992px, md), (1200px, lg) {
+	@media (min-width: $size) {
+		// Loop through col classes
+		@for $i from 1 through $columns {
+			.grid-c-#{$abbr}-#{$i} {
+				grid-column-end: span $i;
+			}
+		}
 	}
 }
 
 //////// grid row
-.grid-r {
-	[class*="grid-c"] {
-		padding-left: 1.3vw;
-		padding-right: 1.3vw;
-	}
-	.grid-r {
-		margin-left: -0.8vw;
-		margin-right: -0.8vw;
-		[class*="grid-c"] {
-			padding-left: 0.8vw;
-			padding-right: 0.8vw;
-		}
-	}
-}
+// .grid-r {
+// 	[class*="grid-c"] {
+// 		margin-left: 1.3vw;
+// 		margin-right: 1.3vw;
+// 	}
+// 	.grid-r {
+// 		margin-left: -0.8vw;
+// 		margin-right: -0.8vw;
+// 		[class*="grid-c"] {
+// 			padding-left: 0.8vw;
+// 			padding-right: 0.8vw;
+// 		}
+// 	}
+// }
 //////// offsets
+.grid-c-10-offset-2 {
+	grid-column: 2 / span 10;
+}
 .grid-c-11-offset-2 {
 	grid-column: 2 / span 11;
 }
@@ -41,16 +67,11 @@
 .grid-c-14-offset-2 {
 	grid-column: 2 / span 14;
 }
-.grid-c-13-offset-3{
+.grid-c-13-offset-3 {
 	grid-column: 3 / span 13;
 }
 
-//////// responsive
-@include viewport-medium{
-	.grid-c-m-16 {
-		grid-column: span 16;
-	}
-}
+
 
 @include viewport-small {
 	.grid-c-s-16 {
@@ -59,7 +80,8 @@
 	//////// offsets
 	.grid-c-11-offset-2,
 	.grid-c-12-offset-2,
-	.grid-c-14-offset-2, .grid-c-13-offset-3 {
+	.grid-c-14-offset-2,
+	.grid-c-13-offset-3 {
 		grid-column: span 16;
 	}
 }

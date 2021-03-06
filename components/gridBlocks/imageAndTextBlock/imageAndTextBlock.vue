@@ -7,10 +7,10 @@
 		</div>
 		<div class="grid-c-13-offset-3">
 			<div class="grid-r">
-				<div class="grid-c-8 grid-c-m-16" v-if="bodytext">
+				<div class="grid-c-md-8 grid-c-16" v-if="bodytext">
 					<div v-html="toHtmlString(bodytext.json)"></div>
 				</div>
-				<div class="grid-c-8 grid-c-m-16 flex-center-center" v-if="image">
+				<div class="grid-c-md-8 grid-c-16 flex-center-center" v-if="image">
 					<picture>
 						<source
 							:data-srcset="image.url + '?w=500&fm=webp'"
