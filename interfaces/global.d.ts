@@ -42,6 +42,7 @@ declare interface ICoachingBlock {
 //////// global data
 declare interface IFooter {
 	readonly empowerMind?: IImage;
+	readonly empowerMindText?: string;
 	readonly adresse?: string;
 	readonly email?: string;
 	readonly phonenumber?: string;
@@ -60,5 +61,6 @@ declare interface IMenuItems {
 	readonly __typename?: string;
 }
 declare interface IMenu{
-	readonly items?: Array<IMenuItems>;
+	readonly mainMenuCollection?: Array<IMenuItems>;
+	readonly logo?: IImage;
 }

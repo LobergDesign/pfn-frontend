@@ -7,7 +7,10 @@
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate --modern"
+    "generatemodern": "nuxt-ts generate --modern",
+    "generatedev": "nuxt-ts generate",
+    "generateprod": "nuxt-ts generate --quiet",
+    "generate": "nuxt-ts generate"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^14.1.2",

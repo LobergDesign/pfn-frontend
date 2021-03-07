@@ -64,20 +64,14 @@ ol li {
 	@include default-text-style;
 }
 .label {
-	position: relative;
 	color: $color-yellow-corn;
 	@include fluid-type(16px, 18px);
 	display: block;
 	@include font-pt-sans-bold;
-	&::before {
-		content: "";
-		position: absolute;
-		transform: translateX(-7vw) translateY(-50%);
-		top: 50%;
-		width: 6vw;
-		height: .2rem;
-		background-color: $color-yellow-corn;
-	}
+}
+hr {
+	border: 0.05rem solid $color-yellow-corn;
+	margin-top:1.1rem;
 }
 blockquote {
 }
@@ -86,7 +80,7 @@ a {
 	text-decoration: none;
 }
 
-@include viewport-small{
+@include viewport-small {
 	.label {
 		&::before {
 			content: none;

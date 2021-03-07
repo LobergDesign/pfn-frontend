@@ -74,6 +74,17 @@ $footer-padding: clamp(4rem, 8vw, 12rem);
 		}
 	}
 }
+// promotion banner
+.promotion-banner{
+	background-color: $color-gray-alabaster;
+	padding: 5vw 0;
+	&__text{
+		display: block;
+		margin-top: .6vw;
+		font-size: 1.4rem;
+		color: $color-black-tundora;
+	}
+}
 @include viewport-custom-min(2500px) {
 	.footer {
 		// yellow bg in right site

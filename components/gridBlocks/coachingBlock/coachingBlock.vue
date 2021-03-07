@@ -15,6 +15,7 @@
 				<nuxt-link :to="'coaching/'">
 					<span class="list-block__item-headline" v-if="blockData.title">{{ blockData.title }}</span>
 					<p v-if="blockData.subtitle">{{ blockData.subtitle }}</p>
+					<SvgArrow />
 				</nuxt-link>
 			</li>
 		</ul>

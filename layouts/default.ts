@@ -8,8 +8,10 @@ export default class Default extends Vue {
 	async fetch() {
 		const response = await this.$nuxt.context.$dataApi.getData(globalQuery);
 		const {
+			logo,
 			mainMenuCollection,
 			empowerMind,
+			empowerMindText,
 			adresse,
 			email,
 			facebook,
@@ -20,11 +22,11 @@ export default class Default extends Vue {
 			youTube,
 			zipcodeAndCity,
 		} = response.data.globalSettings;
-		this.menuData = mainMenuCollection;
-		
+		this.menuData = { mainMenuCollection, logo };
 		this.footerData = {
 			footerObject: {
 				empowerMind,
+				empowerMindText,
 				adresse,
 				email,
 				facebook,

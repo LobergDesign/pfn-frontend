@@ -1,5 +1,9 @@
 const globalQuery = `query {
   globalSettings(id: "38onI8GbhsFteNr1exH4HG") {
+    logo {
+      title
+      url
+    }
     mainMenuCollection {
       items {
         __typename
@@ -20,10 +24,10 @@ const globalQuery = `query {
         }
       }
     }
+    empowerMindText
     empowerMind {
       title,
       description,
-      fileName,
       url
     }
     phonenumber,
