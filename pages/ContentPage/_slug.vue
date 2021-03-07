@@ -1,12 +1,12 @@
 <template>
-	<div>
+	<main>
 		<HeroComponent
 			:heroHeadline="data.pageHeadline"
 			:heroBodytext="data.bodytext"
 			:heroImage="data.image"
 			:heroSubtitle="data.subtitle"
 		/>
-	</div>
+		<GridBlocks :gridContent="data.contentAreaCollection" />
+	</main>
 </template>
-
-<script src="./index.ts"></script>
+<script src="./_slug.ts"></script>

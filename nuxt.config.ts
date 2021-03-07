@@ -89,7 +89,7 @@ export default {
 		fallback: true,
 		crawler: false,
 		// exclude pages thats unused
-		exclude: [/LecturePage/, /ContactPage/, /AboutPage/, /CoachingPage/],
+		exclude: [/LecturePage/, /ContactPage/, /ContentPage/, /CoachingPage/],
 		routes: async () => await generate(),
 	},
 	purgeCSS: {

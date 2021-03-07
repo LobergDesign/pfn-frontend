@@ -3,9 +3,6 @@ const query = `query {
       mainMenuCollection {
         items{__typename}
         items {
-          ... on AboutPage {
-            slug
-          }
           ... on ContactPage {
             slug
           }
@@ -13,6 +10,9 @@ const query = `query {
             slug
           }
           ... on LecturePage {
+            slug
+          }
+          ... on ContentPage {
             slug
           }
         }

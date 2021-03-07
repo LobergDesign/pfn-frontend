@@ -1,7 +1,7 @@
 <template>
 	<section class="hero">
 		<div class="grid-r">
-			<div class="grid-c-12-offset-2">
+		<div class="grid-c-10-offset-2">
 				<h1 v-if="heroHeadline" class="hero__title--large" v-html="toHtmlString(heroHeadline.json)"></h1>
 
 				<h2 v-if="heroSubtitle" class="hero__sub-title">{{ heroSubtitle }}</h2>

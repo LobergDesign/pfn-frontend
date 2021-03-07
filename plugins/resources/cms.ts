@@ -64,6 +64,6 @@ export default function (ctx: Context, inject: any) {
 
 	// inject get data as dataApi to use in app as this.$dataApi
 	inject("dataApi", {
-		getData,
+		getData
 	});
 }

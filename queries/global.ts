@@ -4,26 +4,6 @@ const globalQuery = `query {
       title
       url
     }
-    mainMenuCollection {
-      items {
-        __typename
-      }
-      items {
-        ... on AboutPage {
-          slug
-          title
-        }
-        ... on ContactPage {
-          slug
-        }
-        ... on CoachingPage {
-          slug
-        }
-        ... on LecturePage {
-          slug
-        }
-      }
-    }
     empowerMindText
     empowerMind {
       title,

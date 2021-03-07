@@ -12,25 +12,34 @@ const siteStructure = async () => {
 	const mainItems = data.globalSettings.mainMenuCollection.items;
 	const coachItems = data.coachingItemCollection.items;
 	return {
-		mainSitemap:mainItems,
-		coachingItems: coachItems
+		mainSitemap: mainItems,
+		coachingItems: coachItems,
 	};
 };
 
 export async function extendRoutes(routes: any, resolve: (...param: string[]) => Vue) {
-
 	// api call to sitemap
 	const sitemapRoutes: any = [];
 	const sitemap = await siteStructure();
 	sitemap.mainSitemap.forEach((route: any) => {
-		sitemapRoutes.push({
-			path: `/${route.slug}/`,
-			component: resolve(`~/pages/${route.__typename}/index.vue`),
-		});
+		console.log("route", route);
+		if(route.__typename === "ContentPage"){
+			sitemapRoutes.push({
+				path: `/${route.slug}/`,
+				component: resolve(`~/pages/${route.__typename}/_slug.vue`),
+				name: route.__typename,
+			});
+		}else{
+			sitemapRoutes.push({
+				path: `/${route.slug}/`,
+				component: resolve(`~/pages/${route.__typename}/index.vue`),
+			});
+		}
+		
+		
 	});
 	// genrate dynamig couching pages
 	sitemap.coachingItems.forEach((route: any) => {
-		console.log("route", route);
 		sitemapRoutes.push({
 			path: `/coaching/${route.slug}/`,
 			component: resolve(`~/pages/CoachingPage/_slug.vue`),
@@ -43,7 +52,6 @@ export async function extendRoutes(routes: any, resolve: (...param: string[]) =>
 }
 
 export async function generate() {
-
 	const routes: any = [];
 	const sitemap = await siteStructure();
 	sitemap.mainSitemap.forEach((item: any) => {
