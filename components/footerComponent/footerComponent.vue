@@ -3,7 +3,7 @@
 		<section class="promotion-banner">
 			<div class="grid-w">
 				<div class="grid-r">
-					<div class="grid-c-10-offset-2" v-if="data.empowerMind">
+					<div class="grid-c-10-offset-2 grid-remove-offset-sm" v-if="data.empowerMind">
 						<div v-if="data.empowerMind.url">
 							<picture>
 								<source

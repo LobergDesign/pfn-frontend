@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<div class="grid-r">
-			<div class="grid-c-4">
+			<div class="grid-c-4 flex-vertical-center">
 				<nuxt-link to="/">
 					<picture>
 						<source
@@ -14,7 +14,7 @@
 							media="(min-width: 1000px)"
 							type="image/webp"
 						/>
-						<img :src="logo.url + '?w=90'" :alt="logo.title" class="lazyload lazyloaded" />
+						<img :src="logo.url + '?w=90'" :alt="logo.title" class="lazyload lazyloaded header__logo" />
 					</picture>
 				</nuxt-link>
 			</div>

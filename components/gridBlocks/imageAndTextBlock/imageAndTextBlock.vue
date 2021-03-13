@@ -1,6 +1,6 @@
 <template>
 	<div class="grid-r">
-		<div class="grid-c-1-offset-1">
+		<div class="grid-c-1-offset-1 grid-remove-offset-sm">
 			<hr />
 		</div>
 		<div class="grid-c-10">
@@ -9,7 +9,7 @@
 			</span>
 		</div>
 
-		<div class="grid-c-13-offset-3">
+		<div class="grid-c-13-offset-3 grid-remove-offset-sm">
 			<div class="grid-r">
 				<div class="grid-c-md-8 grid-c-16" v-if="bodytext">
 					<div v-html="toHtmlString(bodytext.json)"></div>

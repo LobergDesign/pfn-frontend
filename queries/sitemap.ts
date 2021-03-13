@@ -1,8 +1,8 @@
 const query = `query {
   globalSettings(id: "38onI8GbhsFteNr1exH4HG") {
       mainMenuCollection {
-        items{__typename}
         items {
+          __typename
           ... on ContactPage {
             slug
           }
@@ -20,6 +20,7 @@ const query = `query {
   }
    coachingItemCollection {
     items {
+      __typename
       slug
     }
   }

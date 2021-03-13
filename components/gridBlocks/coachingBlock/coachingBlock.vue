@@ -1,7 +1,7 @@
 <template>
 	<div class="list-block">
 		<div class="grid-r">
-			<div class="grid-c-10-offset-2"></div>
+			<div class="grid-c-10-offset-2 grid-remove-offset-sm"></div>
 			<div class="grid-c-16"></div>
 		</div>
 		<ul class="reset-ul grid-r">

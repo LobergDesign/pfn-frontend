@@ -7,10 +7,14 @@
 	position: fixed;
 	top: 0;
 	background-color: $color-white;
-	padding: 1.5rem 0 1rem;
+	padding: 1rem 0;
 	z-index: 10;
+	a{
+		margin: 0;
+	}
 	// logo
 	&__logo {
+		margin-top: 1rem;
 		max-width: 8.5rem;
 	}
 	// nav
@@ -20,6 +24,7 @@
 	}
 	&__nav-list-item {
 		display: inline-block;
+		margin: 0;
 	}
 	&__nav-list-item a {
 		display: block;

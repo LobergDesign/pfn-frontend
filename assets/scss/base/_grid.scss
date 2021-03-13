@@ -61,30 +61,20 @@ $grid-gap: 2vw;
 .grid-c-10-offset-2 {
 	grid-column: 2 / span 10;
 }
-.grid-c-11-offset-2 {
-	grid-column: 2 / span 11;
-}
-.grid-c-12-offset-2 {
-	grid-column: 2 / span 12;
-}
-.grid-c-14-offset-2 {
-	grid-column: 2 / span 14;
-}
+// offset 3
 .grid-c-13-offset-3 {
 	grid-column: 3 / span 13;
 }
 
 
-
-@include viewport-small {
-	.grid-c-s-16 {
+@include viewport-medium{
+	.grid-remove-offset-md{
 		grid-column: span 16;
 	}
+}
+@include viewport-small {
 	//////// offsets
-	.grid-c-11-offset-2,
-	.grid-c-12-offset-2,
-	.grid-c-14-offset-2,
-	.grid-c-13-offset-3 {
+	.grid-remove-offset-sm{
 		grid-column: span 16;
 	}
 }

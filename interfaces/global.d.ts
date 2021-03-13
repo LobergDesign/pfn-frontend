@@ -15,30 +15,6 @@ export declare interface IImage {
 	readonly url?: string;
 }
 
-export declare interface IHero {
-	readonly pageHeadline?: object;
-	readonly bodytext?: object;
-	readonly image?: IImage;
-	readonly subtitle?: string;
-}
-//////// blocks
-declare interface IImageBlock {
-	readonly imagesCollection?: Array<IImage>;
-	readonly fullscreen?: boolean;
-}
-declare interface ITextBlock {
-	readonly bodytext?: object;
-}
-declare interface IImageTextBlock {
-	readonly label?: string;
-	readonly bodytext?: object;
-	readonly image?: IImage;
-}
-declare interface ICoachingBlock {
-	readonly title?: string;
-	readonly subtitle?: string;
-}
-
 //////// global data
 declare interface IFooter {
 	readonly empowerMind?: IImage;
@@ -63,4 +39,38 @@ declare interface IMenuItems {
 declare interface IMenu{
 	readonly mainMenuCollection?: Array<IMenuItems>;
 	readonly logo?: IImage;
+}
+
+export declare interface IHero {
+	readonly pageHeadline?: object;
+	readonly bodytext?: object;
+	readonly image?: IImage;
+	readonly subtitle?: string;
+}
+//////// blocks
+declare interface IImageBlock {
+	readonly imagesCollection?: Array<IImage>;
+	readonly fullscreen?: boolean;
+}
+declare interface ITextBlock {
+	readonly bodytext?: object;
+}
+declare interface IImageTextBlock {
+	readonly label?: string;
+	readonly bodytext?: object;
+	readonly image?: IImage;
+}
+declare interface ICoachingBlock {
+	readonly title?: string;
+	readonly subtitle?: string;
+}
+///////// components
+declare interface IProcessItem {
+	readonly headline?: string;
+	readonly bodytext?: object;
+	readonly image?: IImage;
+}
+declare interface IProcess {
+	readonly coachingProcessCollection?: Array<IProcessItem>;
+	readonly coachingProcessTitle?: object;
 }

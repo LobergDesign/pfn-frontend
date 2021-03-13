@@ -8,8 +8,4 @@ export default class HeaderComponent extends Vue {
 	readonly menuData!: IMenu;
 	public menuList: IMenuItems[] = this.menuData.mainMenuCollection || [];
 	public logo: IImage = this.menuData.logo || {};
-
-	mounted(){
-		console.debug("menuData", this.menuData);
-	}
 }
