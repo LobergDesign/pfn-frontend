@@ -18,7 +18,11 @@ export default {
 				content: process.env.npm_package_description || "",
 			},
 		],
-		link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+		link: [
+			{ rel: "icon", href: "/favicon.ico" },
+			{ rel: "icon", type: "image/svg+xml", href: "/icon.svg" },
+			{ rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+		],
 	},
 	/*
 	 ** Global CSS

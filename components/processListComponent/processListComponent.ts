@@ -6,8 +6,8 @@ import { IProcess, IProcessItem } from "~/interfaces/global";
 	name: "ProcessListComponent",
 })
 export default class ProcessListComponent extends Vue {
-	@Prop({ type: Object as () => IProcess, required: true })
-	readonly processContentTitle!: IProcess;
+	@Prop({ type: Object as () => IProcess })
+	readonly processContentTitle: IProcess | null;
 	@Prop({ type: Array as () => IProcessItem, required: true })
 	readonly processContentList!: IProcessItem;
 	public toHtmlString(content: any) {

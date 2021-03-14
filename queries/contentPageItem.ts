@@ -1,6 +1,4 @@
-// @ts-ignore
-export function getDynamicData(slug: string) {
-	return `
+const getDynamicData = `
   query getContentPage($slug: String){
     pageData: contentPageCollection(where: { slug: $slug }, limit:1) {
       items {
@@ -67,4 +65,4 @@ export function getDynamicData(slug: string) {
     }
   }
   `;
-}
+  export { getDynamicData };

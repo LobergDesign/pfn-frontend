@@ -26,9 +26,6 @@
 								{{ item.slug.replace("-", " ") }}
 							</nuxt-link>
 						</li>
-						<li class="header__nav-list-item">
-							<nuxt-link to="/grid/">Grid page</nuxt-link>
-						</li>
 						<li>
 							<nuxt-link to="/kontakt/" class="btn">Book foredrag</nuxt-link>
 						</li>

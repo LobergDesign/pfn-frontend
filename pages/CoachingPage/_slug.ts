@@ -5,11 +5,10 @@ import { getDynamicData } from "~/queries/coachingPageItem";
 
 @Component
 export default class CoachingPage extends Vue {
-	async asyncData({ $dataApi, app, error, route }: Context) {
-		const routePath = app.context.route.path;
-		const response = await $dataApi.getData(getDynamicData(routePath));
-		console.debug("jjddj", route);
-		console.debug("jjddj", app.context.route);
+	async asyncData({ $dataApi, error, route }: Context) {
+		const routePath = route.params.slug;
+		const variables = { slug: routePath };
+		const response = await $dataApi.getDynamicData(getDynamicData, variables);
 		const responseData = response.data?.pageData?.items[0];
 		if (!responseData) {
 			return error({
@@ -17,7 +16,6 @@ export default class CoachingPage extends Vue {
 				message: response.errors,
 			});
 		}
-		// console.debug("responseData", responseData);
 		return { data: responseData };
 	}
 }

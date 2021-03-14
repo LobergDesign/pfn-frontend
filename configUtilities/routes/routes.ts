@@ -11,7 +11,6 @@ const siteStructure = async () => {
 	const data = await graphQLClient.request(query);
 	const mainItems = data.globalSettings.mainMenuCollection.items;
 	const coachItems = data.coachingItemCollection.items;
-
 	return {
 		mainSitemap: mainItems,
 		coachingItems: coachItems,
@@ -22,37 +21,38 @@ export async function extendRoutes(routes: any, resolve: (...param: string[]) =>
 	// api call to sitemap
 	const sitemapRoutes: any = [];
 	const sitemap = await siteStructure();
+
 	sitemap.mainSitemap.forEach((route: any) => {
 		if (route.__typename === "ContentPage") {
+		
 			sitemapRoutes.push({
-				path: `/${route.slug}/`,
-				component: resolve(`~/pages/${route.__typename}/_slug.vue`),
+				path: "/:slug/",
+				component: resolve(`~/pages/ContentPage/_slug.vue`),
 				name: route.__typename,
 			});
-		} else {
+		} 
+		else {
+	
 			sitemapRoutes.push({
 				path: `/${route.slug}/`,
 				component: resolve(`~/pages/${route.__typename}/index.vue`),
 			});
 		}
 	});
-	// genrate dynamig couching pages
-	sitemap.coachingItems.forEach((route: any) => {
+	// genrate dynamic couching pages
+	sitemap.coachingItems.forEach(() => {
 		sitemapRoutes.push({
-			path: `/coaching/${route.slug}/`,
-			component: resolve(`~/pages/CoachingPage/_slug.vue`),
-			pathis: `/coaching/${route.slug}/`,
+			path: "/coaching/:slug/",
+			component: resolve("~/pages/CoachingPage/_slug.vue"),
 		});
 	});
-
-	// return routes with the extended routes to complete router.
 	return [...routes, ...sitemapRoutes];
 }
 
 export async function generate() {
-	const routes: any = [];
+	
 	const sitemap = await siteStructure();
-
+	const routes: any = [];
 	sitemap.mainSitemap.forEach((item: any) => {
 		routes.push({
 			route: `/${item.slug}/`,
@@ -61,9 +61,7 @@ export async function generate() {
 	sitemap.coachingItems.forEach((item: any) => {
 		routes.push({
 			route: `/coaching/${item.slug}/`,
-			pathnot: `/coaching/${item.slug}/`,
 		});
 	});
-	console.log("routes", routes);
 	return routes;
 }

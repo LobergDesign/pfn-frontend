@@ -10,6 +10,14 @@ export default function (ctx: Context, inject: any) {
 			return getErrorResponse(error);
 		}
 	};
+	const getDynamicData = async (query: any, vars:any) => {
+		const client = ctx.app.$graphql;
+		try {
+			return handleResponse(await client.request(query, vars));
+		} catch (error: any) {
+			return getErrorResponse(error);
+		}
+	};
 
 	// create response function to handle errors
 	const handleResponse = async (response: any) => {
@@ -33,6 +41,7 @@ export default function (ctx: Context, inject: any) {
 
 	// inject get data as dataApi to use in app as this.$dataApi
 	inject("dataApi", {
-		getData
+		getData,
+		getDynamicData
 	});
 }
